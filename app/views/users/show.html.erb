@@ -1,3 +1,4 @@
 <h3>User</h3>
-<p>User: <%= @user.name %></p>
+<p>
+	<%= image_tag @user.twitter_picture, :class => "img-circle" if @user.picture %></td> User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
