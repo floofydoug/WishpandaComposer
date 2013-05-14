@@ -1,4 +1,10 @@
 <h3>Home</h3>
 <% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+  <p>
+  	<% if user.twitter_picture.present? %> 
+  	<%=image_tag user.twitter_picture%> 
+  	<% else %> 
+  	<%= image_tag "images/photo.jpg" %> <%# i have no idea why this is not showing up. it should be looking in assets/images.. and finding that photo.jpg%> 
+  	<%end %> 
+  	<%=link_to user.name, user %></p>
 <% end %>

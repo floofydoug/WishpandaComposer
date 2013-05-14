@@ -15,7 +15,7 @@
   <% @users.each do |user| %>
     <tr>
       <td><%= link_to user.name, user %></td>
-      <td> <%= image_tag user.picture %> </td> 
+      <td> <%= image_tag @user.picture %> </td> 
       <td><%= user.email %></td>
       <td><%= user.created_at.to_date %></td>
       <td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
