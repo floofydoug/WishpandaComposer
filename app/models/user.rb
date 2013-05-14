@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :picture, :twitter_picture
+  attr_accessible :name, :email, :password, :username, :password_confirmation, :remember_me, :picture, :twitter_picture, :avatar
+  has_attached_file :avatar
 
   def self.from_omniauth(auth)
   where(auth.slice(:provider, :uid)).first_or_create do |user|
