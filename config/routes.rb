@@ -1,4 +1,7 @@
 WishpandaComposer::Application.routes.draw do
+  resources :contests
+
+
   authenticated :user do
     root :to => 'home#index'
   end
