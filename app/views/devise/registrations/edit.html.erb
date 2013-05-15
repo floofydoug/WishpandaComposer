@@ -4,7 +4,7 @@
   <%= display_base_errors resource %>
   <p> Profile Picture </p> 
 
-  <% if !@user.avatar.url.present? %> 
+  <% if !@user.avatar.present? %> 
   <% else %>
     <%= image_tag @user.avatar.url() %>
   <%end %>  
@@ -18,7 +18,7 @@
       <%= f.file_field :avatar %>
 
   <%= f.input :name, :autofocus => true %>
-  <%= f.input :email, :required => true %>
+  <%= f.input :email, :required => true, :placeholder => "Fill this out so we can contact you when you win!", :size => 50%>
   <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it. If you signed up with Twitter, you should update this as a backup.", :required => false %>
   <%= f.input :password_confirmation, :required => false %>
   <% if f.object.encrypted_password.present? %> 
