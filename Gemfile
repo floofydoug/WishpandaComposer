@@ -27,3 +27,4 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "omniauth-twitter"
 gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
+gem "twitter"

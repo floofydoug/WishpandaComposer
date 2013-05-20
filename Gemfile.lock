@@ -100,6 +100,8 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    faraday (0.8.7)
+      multipart-post (~> 1.1)
     figaro (0.6.4)
       bundler (~> 1.0)
       rails (>= 3, < 5)
@@ -122,6 +124,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.3)
+    multipart-post (1.2.0)
     nokogiri (1.5.9)
     oauth (0.4.7)
     omniauth (1.1.4)
@@ -182,6 +185,7 @@ GEM
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    simple_oauth (0.2.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -197,6 +201,10 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    twitter (4.6.2)
+      faraday (~> 0.8, < 0.10)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.2)
     tzinfo (0.3.37)
     uglifier (2.1.0)
       execjs (>= 0.3.0)
@@ -235,4 +243,5 @@ DEPENDENCIES
   simple_form (>= 2.1.0)
   sqlite3
   thin (>= 1.5.0)
+  twitter
   uglifier (>= 1.0.3)
