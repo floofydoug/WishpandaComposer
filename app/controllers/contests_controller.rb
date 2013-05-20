@@ -6,7 +6,7 @@ class ContestsController < ApplicationController
   def create
     @contest = Contest.new(params[:contest])
     if @contest.save
-    	
+
       # Composer is making this red for some reason
       # We want it to be green
       flash[:success] = "Contest created!"
@@ -19,5 +19,9 @@ class ContestsController < ApplicationController
 
   def show
     @contest = Contest.find(params[:id])
+  end
+
+  def index
+    @contests = Contest.all
   end
 end

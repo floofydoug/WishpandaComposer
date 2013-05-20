@@ -1,0 +1,12 @@
+<h3>Contests</h3>
+
+<p>
+  <% @contests.each do |contest| %>
+  	<%= link_to "Contest: #{contest.name}", contest_path(contest) %>
+
+  	<!-- Line break this isn't the last contest -->
+  	<% if contest != @contests.last %>
+  	  <br>
+  	<% end %>
+  <% end %>
+</p>
