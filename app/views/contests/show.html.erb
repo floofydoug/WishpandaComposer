@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Contest name:</b>
+  <%= @contest.contest_name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @contest.user_id %>
+</p>
+
+<p>
+  <b>Contest description:</b>
+  <%= @contest.contest_description %>
+</p>
+
+<p>
+  <b>Contest type:</b>
+  <%= @contest.contest_type %>
+</p>
+
+<p>
+  <b>Contest prize image:</b>
+  <%= @contest.contest_prize_image %>
+</p>
+
+<p>
+  <b>Contest start date:</b>
+  <%= @contest.contest_start_date %>
+</p>
+
+<p>
+  <b>Contest end date:</b>
+  <%= @contest.contest_end_date %>
+</p>
+
+<p>
+  <b>Contest:</b>
+  <%= @contest.contest_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_contest_path(@contest) %> |
+<%= link_to 'Back', contests_path %>
