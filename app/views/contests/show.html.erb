@@ -9,6 +9,6 @@
   Description: <%= @contest.description %><br>
 
   <!-- to_date removes the time from the datetime -->
-  Start date: <%= @contest.start_date.to_date %><br>
-  End date: <%= @contest.end_date.to_date %>
+  Start date: <%= @contest.start_date.to_datetime.readable_inspect() %><br>
+  End date: <%= @contest.end_date.to_datetime.readable_inspect() %>
 </p>

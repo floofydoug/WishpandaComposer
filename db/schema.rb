@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520193247) do
+ActiveRecord::Schema.define(:version => 20130522062754) do
 
   create_table "contests", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(:version => 20130520193247) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.text     "tweet_string"
+    t.integer  "start_time"
+    t.integer  "end_time"
   end
 
   create_table "roles", :force => true do |t|

@@ -5,7 +5,7 @@ class ContestsController < ApplicationController
 
   def create
     @contest = Contest.new(params[:contest])
-    if @contest.save
+    if @contest.save!
 
       # Composer is making this red for some reason
       # We want it to be green

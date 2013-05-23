@@ -2,22 +2,32 @@
 <h1>Create contest</h1>
 
 <div class="row">
-  <div class="span4 offset4">
+  <div class="span8 offset4">
   	<% @contest = Contest.new  %>
     <%= form_for(@contest) do |f| %>
-      <%= f.label :name %>
+        <% @contest.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+   <% end %>
+     <p>  
+      <%= f.label "Contest Name" %>
       <%= f.text_field :name %>
+    </p>
 
-      <%= f.label :description %>
+      <%= f.label "Contest Description" %>
       <%= f.text_field :description %>
 
+      <%= f.label "Determine your hashtag" %> 
+      #<%= f.text_field :tweet_string, :placeholder=> "Please use a unique hashtag!" %> 
+
       <%= f.label :start_date %>
-      <%= f.text_field :start_date %>
+      <%= datetime_select("contest", "start_date", :hour => true, :ampm => true, :date_seperator => '/', :length => 3, :size => 5, :default => Time.now.midnight) %>
+     
 
       <%= f.label :end_date %>
-      <%= f.text_field :end_date %>
+      <%= datetime_select("contest", "end_date", :hour => true, :ampm => true, :default => Time.now.midnight + 5.days) %>
+      
 
-      <%= f.label :image %>
+      <%= f.label "Prize Image" %>
       <%= f.file_field :image %>
   </div>
 </div>
