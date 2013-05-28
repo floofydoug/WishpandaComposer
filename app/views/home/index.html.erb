@@ -1,10 +1,8 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>
-  	<% if user.twitter_picture.present? %> 
-  	<%=image_tag user.twitter_picture%> 
-  	<% else %> 
-  	<%= image_tag "images/photo.jpg" %> <%# i have no idea why this is not showing up. it should be looking in assets/images.. and finding that photo.jpg%> 
-  	<%end %> 
-  	<%=link_to user.name, user %></p>
-<% end %>
+
+	<div class="hero-unit"> 
+		<h1> Welcome to Wishpanda </h1> 
+	</div> 
+
+<div class="span4"> 
+	<p> Makin Twitter Contests Legit. </p> 
+</div> 

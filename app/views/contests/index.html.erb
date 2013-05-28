@@ -5,44 +5,37 @@
 <p>
 	
   <% @contests.each do |contest| %>
-    <div class="span3" style="margin: 25px; " > 
-    	<div class="thumbnail" style= "text-align: center; border: 0px; background-color: #ffffff;"> 
-    <%= link_to image_tag(contest.image(:normal)), contest_path(contest) %>
+  <%= contest.tweet_string %> 
+		    <div class="span3" style="margin: 25px; "> 
+			   <div class="thumbnail" style= "text-align: center; border: 0px; background-color: #ffffff;"> 
+			    <%= link_to image_tag(contest.image(:normal)), contest_path(contest) %>
 
-    <p> 
+			    <p> <%= link_to "Contest Name: #{contest.name}", contest_path(contest) %> </p> 
+		
+			  	<p> # contestants </p> 
+			  	<p>  <a href="#tweetModal" role="button" class="btn btn-primary" data-toggle="modal" > Enter Contest </a> </p> 
 
-  	<%= link_to "Contest Name: #{contest.name}", contest_path(contest) %>
-  </p> 
-  	<!-- Line break this isn't the last contest -->
-  	<p> # contestants </p> 
-  	<p>  <a href="#tweetModal" role="button" class="btn btn-primary" data-toggle="modal" > Enter Contest </a> </p> 
+			 <div id="tweetModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Tweet" aria-hidden="true">
+			  <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			    <h3 id="Tweet"><%= "Contest: #{contest.name}" %> </h3>
+			  </div>
+			  <div class="modal-body">
+			  	<p class="lead"> Just tweet the following hashtag(s) to enter! </p> 
+					  <%=text_area_tag :tweet, "I'm entering via Wishpanda for a chance to win! #" + "#{contest.tweet_string}" %>
+			  </div>
+			  <div class="modal-footer">
+			    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			    <button class="btn btn-primary">Tweet This!</button>
+			  </div>
+			</div>
 
-<!-- Modal Starts Here --> 
+			  	</div>
+	<!-- Line break  if this isn't the last contest -->
+			  	<% if contest != @contests.last %>
+			  		<hr> 
 
-
-
- <div id="tweetModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Tweet" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="Tweet"><%= "Contest: #{contest.name}" %> </h3>
-  </div>
-  <div class="modal-body">
-  	<p class="lead"> Just tweet the following hashtag(s) to enter! </p> 
-		  <input text_area>
-  </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Tweet This!</button>
-  </div>
-</div>
-
-
-
-  	</div>
-  	<% if contest != @contests.last %>
-  		<hr> 
-
-  	</div> 
-  	<% end %>
+		  	</div> 
+		  	<% end %>
   <% end %>
 </p>
