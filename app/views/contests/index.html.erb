@@ -1,6 +1,9 @@
-<h3>Contests</h3>
+<div class="hero-unit" style="text-align: center;">
+	<h1> Contests<h1> 
+</div>
 
 <p>
+	
   <% @contests.each do |contest| %>
     <div class="span3" style="margin: 25px; " > 
     	<div class="thumbnail" style= "text-align: center; border: 0px; background-color: #ffffff;"> 
@@ -24,15 +27,14 @@
     <h3 id="Tweet"><%= "Contest: #{contest.name}" %> </h3>
   </div>
   <div class="modal-body">
-    <p>One fine body…</p>
+  	<p class="lead"> Just tweet the following hashtag(s) to enter! </p> 
+		  <input text_area>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-    <button class="btn btn-primary">Tweet and Enter!</button>
+    <button class="btn btn-primary">Tweet This!</button>
   </div>
 </div>
-
-
 
 
 
