@@ -28,3 +28,4 @@ gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "omniauth-twitter"
 gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
 gem "twitter"
+gem "whenever"

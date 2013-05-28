@@ -3,9 +3,9 @@ WishpandaComposer::Application.routes.draw do
 
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'contests#index'
   end
-  root :to => "home#index"
+  root :to => "contests#index"
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   resources :users
 

@@ -1,4 +1,5 @@
 class Contest < ActiveRecord::Base
+  has_many :users, through: :contestants
   attr_accessible :description, :end_date, :name, :start_date, :tweet_string, :end_time, :start_time
   attr_accessible :image
 
@@ -17,4 +18,5 @@ class Contest < ActiveRecord::Base
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :tweet_string, presence: true
+
 end
